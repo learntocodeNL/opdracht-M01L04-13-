@@ -1,0 +1,119 @@
+.container {
+  height: 100%;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, 20px);
+  grid-template-areas:
+    "h h h h h h h h h h h m"
+    "c c c c c c c c c c c c"
+    "o o o o o o o o o o o o"
+    "r r r r r r r r r r r r"
+    "f f f f f f f f f f f f";
+}
+
+.body {
+  background-color: grey;
+}
+.header {
+  grid-area: h;
+}
+
+ul.menu {
+  list-style-type: none;
+}
+
+.menu {
+  grid-area: m;
+}
+
+.content {
+  padding-top: 40px;
+  padding-top: auto;
+  grid-area: c;
+}
+
+.foto1 {
+  grid-area: o;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.foto2 {
+  grid-area: r;
+}
+
+.footer {
+  grid-area: f;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+@media only screen and (min-width: 480px) {
+  .content {
+    display: inline;
+  }
+
+  .container {
+    grid-template-columns: 100% auto;
+    grid-template-areas:
+      "h m"
+      "c c"
+      "r o"
+      "f f";
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .content {
+    margin-top: 40px;
+  }
+  .header {
+    text-align:center;
+  }
+  .container {
+    grid-template-columns: 20% 200px 20px;
+    grid-template-areas:
+      "m h c"
+      "m h c"
+      "m r o"
+      "m f f";
+  }
+}
+
+@media only screen and (min-width: 800px) {
+}
+.header {
+  text-align: center;
+}
+.container {
+  grid-template-columns: 20% auto;
+  grid-template-areas:
+    "m c h"
+    "m c h"
+    "m c r"
+    "m f o";
+}
